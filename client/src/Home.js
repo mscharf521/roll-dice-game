@@ -16,7 +16,7 @@ function Home()
     const [password, setPassword] = useState("");
     const [dice, setDice] = useState([1,1]);
     const [alerts, SetAlerts] = useState([]);
-    //const [alerts, SetAlerts] = useState([{text:"This is an alert!", id:99999}])
+    
     let next_alert_id = 0;
 
     const handleLogin = async (event) => {
@@ -30,7 +30,7 @@ function Home()
             }
         })
         .catch((err)=>{
-            console.log(err)
+            //console.log(err)
             if(err.message === 'Network Error')
             {
                 addAlert(err.message, null)
@@ -53,7 +53,7 @@ function Home()
             }
         })
         .catch((err)=>{
-            console.log(err)
+            //console.log(err)
             if(err.message === 'Network Error')
             {
                 addAlert(err.message, null)

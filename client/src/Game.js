@@ -33,7 +33,6 @@ function Game()
         if(user_id === null) { logout(); }
         try {
             axios.get("/user/" + user_id).then((res) => {
-                console.log(res)
                 setUsername(res.data.username);
             }).catch((err) => { logout(); });
         } catch (error) {
@@ -46,19 +45,15 @@ function Game()
         {
             axios.get("/highscore/" + user_id)
             .then((res) => {
-                console.log(res)
                 setHighscore(res.data.score);
             }).catch((err) => { logout(); });
             axios.get("/highscore/today/" + user_id).then((res) => {
-                console.log(res)
                 setDayHighscore(res.data.day_score);
             }).catch((err) => { logout(); });
             axios.get("/highscores/").then((res) => {
-                console.log(res)
                 setAllTimeLeaderboard(res.data);
             }).catch((err) => { logout(); });
             axios.get("/highscores/today").then((res) => {
-                console.log(res)
                 setTodayLeaderboard(res.data);
             }).catch((err) => { logout(); });
         }
