@@ -38,7 +38,7 @@ function Game()
             }).catch((err) => { logout(); });
         } catch (error) {
             console.error(error);
-          }
+        }
     }, [user_id, navigate])
 
     useEffect(() => {

@@ -31,7 +31,7 @@ function Home()
         })
         .catch((err)=>{
             console.log(err)
-            if(err.message == 'Network Error')
+            if(err.message === 'Network Error')
             {
                 addAlert(err.message, null)
             }
@@ -54,7 +54,7 @@ function Home()
         })
         .catch((err)=>{
             console.log(err)
-            if(err.message == 'Network Error')
+            if(err.message === 'Network Error')
             {
                 addAlert(err.message, null)
             }
