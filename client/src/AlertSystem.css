@@ -1,0 +1,65 @@
+.AlertSystem-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.AlertSystem {
+    width: 50vw;
+    height: auto;
+    max-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-content: flex-start;
+    pointer-events: none;
+    padding-top: 10px;
+}
+
+.Alert-buffer {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.Alert {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px black;
+    margin-bottom: 10px;
+    transition: all 0.1s ease-in-out;
+    pointer-events: all;
+    overflow: hidden;
+    white-space: pre-line;
+}
+
+.Alert:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 812px) {
+    .AlertSystem {
+        width: 70vw;
+        padding-top: 100px;
+    }
+
+    .Alert {
+        font-size: 1.1rem;
+    }
+}

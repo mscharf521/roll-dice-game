@@ -1,0 +1,176 @@
+:root {
+    --main-bg-color: #D39080;
+    --nav-bar-bg-color: #FFE5D9;
+    --blocks-bg-color: #FFE5D9;
+    --text-color: #000000;
+  }
+
+.GamePage {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-bg-color);
+
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.NavBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    background-color: var(--nav-bar-bg-color);
+}
+
+.Welcome {
+    position: absolute;
+    left: 20px;
+    font-size: 1.5em;
+}
+
+.Logout {
+    position: absolute;
+    right: 20px;
+}
+
+.DiceWrapper {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    background-color: var(--blocks-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.DiceDiv {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.Dice {
+    width: 15%;
+    margin: 5%;
+}
+
+.ScoreDiv {
+    height: 1em;
+    margin-top: -1em;
+    font-size: 2.5em;
+}
+
+@keyframes spin {
+    0%   {transform: rotate(0deg)}
+    25%  {transform: rotate(90deg)}
+    50%  {transform: rotate(180deg)}
+    75%  {transform: rotate(270deg)}
+    100% {transform: rotate(360deg)}
+  }
+
+.DiceAnim {
+    width: 15%;
+    margin: 5%;
+    animation-name: spin;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.RollBut {
+    margin: 15px;
+}
+
+.LeaderboardWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90vw;
+}
+
+.LeadboardDiv {
+    width: 30%;
+    height: 280px;
+    background-color: var(--blocks-bg-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.HighscoreDiv{
+    text-align: center;
+}
+
+.LeaderboardHeader{
+    font-size: 1.3em;
+    margin-top: 15px;
+    text-align: center;
+}
+.LeaderboardHeader2{
+    font-size: 1.5em;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.LeaderboardScroll{
+    width: 90%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.LeaderboardRow{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    font-size: 1.1em;
+}
+
+.OddRow{
+    background-color: #d3918065;
+}
+
+.RowUsername {
+    text-overflow: ellipsis;
+}
+
+.PersonalScore{
+    font-size: 2em;
+}
+
+.HighscoreNoticeDiv {
+    background-color: var(--blocks-bg-color);
+    box-shadow: 0px 5px 4px var(--text-color);
+    position: absolute;
+    top: 1.8em;
+    left: -100vw;
+    font-size: 2.5em;
+    text-align: center;
+    width: 50vw;
+}
+
+.HighscoreNoticeDivAnim {
+    animation-name: hs_anim;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+@keyframes hs_anim {
+    0%   {left: -50vw}
+    25%  {left: 23vw}
+    50%  {left: 25vw}
+    75%  {left: 27vw}
+    100% {left: 150vw}
+  }
