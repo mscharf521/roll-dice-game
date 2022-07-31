@@ -95,13 +95,8 @@ function Home()
     }
 
     useEffect(() => {
-        const user_id = localStorage.getItem("user_id");
-        if(user_id)
-        {
-            navigate("/game");
-        }
         setDice([Math.floor(Math.random() * 6), Math.floor(Math.random() * 6)])
-    }, [navigate])
+    }, [])
 
     return (
         <div className="HomePage">
