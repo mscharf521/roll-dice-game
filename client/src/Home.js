@@ -1,7 +1,7 @@
 import './Home.css';
 import { dice_paths, but_color } from './constants.js'
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'

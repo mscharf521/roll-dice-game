@@ -23,6 +23,7 @@
     background-color: var(--blocks-bg-color);
     border-radius: 20px;
     padding-bottom: 20px;
+    margin: 40px;
 }
 
 .TitleDiv {
