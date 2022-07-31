@@ -39,7 +39,7 @@
 
 .DiceWrapper {
     margin: auto;
-    margin-top: 35px;
+    margin-top: 30px;
     margin-bottom: 0px;
     display: flex;
     flex-direction: column;
@@ -49,6 +49,7 @@
     background-color: var(--blocks-bg-color);
     border-radius: 10px;
     padding: 10px;
+    padding-top: 0px;
 }
 
 .DiceDiv {
@@ -61,7 +62,7 @@
 }
 
 .Dice {
-    width: 150px;
+    width: 120px;
     margin: 50px;
 }
 
