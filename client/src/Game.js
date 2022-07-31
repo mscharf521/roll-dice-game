@@ -29,6 +29,7 @@ function Game()
     const [all_time_leaderboard, setAllTimeLeaderboard] = useState([])
     const [today_leaderboard, setTodayLeaderboard] = useState([])
 
+    // Update user data
     useEffect(() => {
         if(user_id === null) { logout(); }
         try {
@@ -40,6 +41,7 @@ function Game()
         }
     }, [user_id, navigate])
 
+    // Update score data
     useEffect(() => {
         if(user_id !== null)
         {
@@ -59,6 +61,7 @@ function Game()
         }
     }, [user_id, highscore, day_highscore])
 
+    // Handle a roll button press
     const handleRoll = async (event) => {
         event.preventDefault();
         try {
@@ -77,29 +80,32 @@ function Game()
             {
                 setHighscore(data.sum);
 
+                // Run Confetti animation
                 SetConfettiNumPieces(150)
                 await sleep(4000)
                 SetConfettiNumPieces(0)
 
             }
-          } catch (error) {
+        } catch (error) {
             console.error(error);
-          }
-      };
+        }
+    };
 
-      const handleLogout = async (event) => {
+    // Handle the logout button press
+    const handleLogout = async (event) => {
         event.preventDefault();
         logout();
-      };
+    };
 
-      const logout = async () => {
+    // Logout the user and return home
+    const logout = async () => {
         await localStorage.removeItem("user_id");
         navigate("/");
-      };
+    };
 
-      const sleep = ms => new Promise(
+    const sleep = ms => new Promise(
         resolve => setTimeout(resolve, ms)
-      );
+    );
 
     return (
         <div className="GamePage">
@@ -163,6 +169,7 @@ function Game()
                     </div>
                 </div>
             </div>
+
             <Confetti width={width} height={height} numberOfPieces={confetti_num_pieces}/>
             <div className={"HighscoreNoticeDiv" + (confetti_num_pieces ? " HighscoreNoticeDivAnim" : "")}>NEW HIGHSCORE</div>
         </div>

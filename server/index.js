@@ -15,6 +15,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// set up routes
 app.get("/", (req, res) => {
   res.json({ message: "This is the roll-dice-game-backend." });
 });
