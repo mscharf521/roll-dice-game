@@ -4,7 +4,7 @@ import { dice_paths, but_color } from './constants.js'
 import axios from "axios";
 import Button from '@material-ui/core/Button'
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useWindowSize from './WindowSize.js'
 import Confetti from 'react-confetti'
 

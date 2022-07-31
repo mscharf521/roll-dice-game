@@ -1,7 +1,7 @@
 import './Home.css';
 import { dice_paths, but_color } from './constants.js'
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
@@ -16,7 +16,7 @@ function Home()
     const [password, setPassword] = useState("");
     const [dice, setDice] = useState([1,1]);
     const [alerts, SetAlerts] = useState([]);
-    
+
     let next_alert_id = 0;
 
     const handleLogin = async (event) => {
