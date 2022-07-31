@@ -26,3 +26,9 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+// Keep backend awake
+var https = require("https");
+setInterval(function() {
+    https.get("https://roll-dice-game-backend.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
