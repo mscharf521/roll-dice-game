@@ -1,5 +1,6 @@
 # Dice Roller
 
+## Overview
 client: https://roll-dice-game-client.herokuapp.com
 
 This is a dice rolling web application. It consists of a client and a server. This client provides the interface for the user to login/register for their account and play the dice rolling game. The server provides the dice rolling results to the user and it maintains user information in a MySQL database including login information and highscore information(all-time highscore and the daily highscore). 
