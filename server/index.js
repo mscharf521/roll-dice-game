@@ -29,7 +29,9 @@ app.listen(PORT, () => {
 });
 
 // Keep backend awake
+/*
 var https = require("https");
 setInterval(function() {
     https.get("https://roll-dice-game-backend.herokuapp.com/");
 }, 300000); // every 5 minutes (300000)
+*/
