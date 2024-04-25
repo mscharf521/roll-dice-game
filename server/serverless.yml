@@ -1,0 +1,32 @@
+service: roll-dice-game-backend
+frameworkVersion: "3"
+
+useDotenv: true
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  runtime: nodejs16.x
+  profile: serverless
+  environment:
+    STAGE: ${sls:stage}
+    MYSQL_ADDON_HOST: ${env:MYSQL_ADDON_HOST}
+    MYSQL_ADDON_DB: ${env:MYSQL_ADDON_DB}
+    MYSQL_ADDON_USER: ${env:MYSQL_ADDON_USER}
+    MYSQL_ADDON_PORT: ${env:MYSQL_ADDON_PORT}
+    MYSQL_ADDON_PASSWORD: ${env:MYSQL_ADDON_PASSWORD}
+    MYSQL_ADDON_URI: ${env:MYSQL_ADDON_URI}
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: ANY
+      - httpApi:
+          path: /{param+}
+          method: ANY

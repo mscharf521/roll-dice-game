@@ -1,10 +1,12 @@
 const express = require("express");
-const cors    = require("cors");
+const cors = require("cors");
+
+const serverless = require("serverless-http");
 
 const app = express();
 
 var corsOptions = {
-  origin: "*"
+  origin: "*",
 };
 
 app.use(cors(corsOptions));
@@ -22,11 +24,13 @@ app.get("/", (req, res) => {
 
 require("./routes.js")(app);
 
+module.exports.handler = serverless(app);
+
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+// const PORT = process.env.PORT || 8080;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}.`);
+// });
 
 // Keep backend awake
 /*

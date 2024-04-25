@@ -1,0 +1,12 @@
+This file shows the DB structure used by the backend
+
+Users
+user_id        INT      PRIMARY
+username       VARCHAR  UNIQUE
+password       VARCHAR
+
+Scores
+user_id        INT      PRIMARY
+score          INT
+day_score      INT
+day_score_date VARCHAR
