@@ -18,7 +18,8 @@
     "eject": "react-scripts eject",
     "clean": "rm -rf build",
     "s3": "aws s3 sync build/ s3://roll-dice-game.com/ --acl public-read",
-    "deploy": "npm run clean && npm run build && npm run s3"
+    "echo-web": "echo Live URL: http://roll-dice-game.com.s3-website.us-east-1.amazonaws.com",
+    "deploy": "npm run clean && npm run build && npm run s3 && npm run echo-s3"
   },
   "engines": {
     "node": "15.7.0",
