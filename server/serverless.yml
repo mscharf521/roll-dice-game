@@ -19,6 +19,10 @@ provider:
     MYSQL_ADDON_PORT: ${env:MYSQL_ADDON_PORT}
     MYSQL_ADDON_PASSWORD: ${env:MYSQL_ADDON_PASSWORD}
     MYSQL_ADDON_URI: ${env:MYSQL_ADDON_URI}
+  httpApi:
+    cors: true
+  logRetentionInDays: 3
+  timeout: 20
 
 functions:
   api:

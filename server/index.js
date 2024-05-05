@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const serverless = require("serverless-http");
+const sql = require("./db.js");
 
 const app = express();
 
@@ -24,18 +25,15 @@ app.get("/", (req, res) => {
 
 require("./routes.js")(app);
 
-module.exports.handler = serverless(app);
+const httpHandler = serverless(app);
+module.exports.handler = async (context, req) => {
+  const result = await httpHandler(context, req);
+  await sql.end();
+  return result;
+};
 
 // set port, listen for requests
 // const PORT = process.env.PORT || 8080;
 // app.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}.`);
 // });
-
-// Keep backend awake
-/*
-var https = require("https");
-setInterval(function() {
-    https.get("https://roll-dice-game-backend.herokuapp.com/");
-}, 300000); // every 5 minutes (300000)
-*/
